@@ -129,13 +129,9 @@ smoketest_postgres() {
     echo "#######################"
     old_pwd=$(pwd)
     cd docker-postgres-replication || exit 1
-    
-    if ! VERSION="$version" p2 -t Dockerfile.p2 -o Dockerfile ; then
-        echo "Templating failed" 1>&2
-        exit 1
-    fi
+
     trap "docker-compose logs; docker-compose down ; docker-compose rm -v; exit 1" EXIT INT TERM
-    local compose_cmd="POSTGRES_PASSWORD=$POSTGRES_PASSWORD docker-compose up -d --force-recreate --build"
+    local compose_cmd="VERSION=$version POSTGRES_PASSWORD=$POSTGRES_PASSWORD docker-compose up -d --force-recreate --build"
     echo "Compose Cmd: $compose_cmd"
     eval "$compose_cmd"
     

@@ -3,7 +3,10 @@ version: '2'
 
 services:
   pg-master:
-    build: '.'
+    build:
+      context: '.'
+      args:
+        VERSION: $VERSION
     image: 'danieldent/postgres-replication'
     restart: 'always'
     environment:
@@ -16,7 +19,10 @@ services:
      - '5432'
 
   pg-slave:
-    build: '.'
+    build:
+      context: '.'
+      args:
+        VERSION: $VERSION
     image: 'danieldent/postgres-replication'
     restart: 'always'
     environment:
