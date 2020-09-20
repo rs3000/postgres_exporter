@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script wraps the integration test binary so it produces concatenated
 # test output.
+set -x
 
 test_binary=$1
 shift

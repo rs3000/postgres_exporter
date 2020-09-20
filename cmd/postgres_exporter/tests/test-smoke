@@ -1,5 +1,6 @@
-#!/bin/bash -x
+#!/usr/bin/env bash
 # Basic integration tests with postgres. Requires docker to work.
+set -x
 
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink

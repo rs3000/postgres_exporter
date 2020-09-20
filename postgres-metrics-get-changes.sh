@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script to parse a text exposition format file into a unique list of metrics
 # output by the exporter and then build lists of added/removed metrics.
 

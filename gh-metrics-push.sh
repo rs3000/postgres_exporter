@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script to copy and push new metric versions to the assets branch.
 
 [ ! -z "$GIT_ASSETS_BRANCH" ] || exit 1
